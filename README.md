@@ -149,7 +149,62 @@ git commit -m "Updated website"
 git push
 
 
+ More Notes on Notebook and Payload
 
+ 1. Notebook
+
+**Notebook computer**
+- Smaller and lighter than a full laptop; focuses on portability and battery life.
+- Usually has less processing power and storage than a desktop.
+- Components: display, keyboard, touchpad, battery, Wi-Fi/Bluetooth, USB ports.
+
+**Computational notebook (Jupyter, Google Colab)**
+- File format: `.ipynb` (JSON-based).
+- Made of **cells**: *code cells* (run live) and *Markdown cells* (text, headings, formulas).
+- A **kernel** runs the code (e.g. Python, R).
+- Advantages: step-by-step execution, inline charts, easy to share and reproduce.
+- Limitations: cells can be run out of order, which causes hidden errors, and notebooks are harder to version-control than plain scripts.
+- Uses: data analysis, machine learning, teaching, research reports.
+
+Study notebook: good note-taking methods
+- *Cornell method*: page split into notes, cues and a summary.
+- *Outline method*: headings with indented sub-points.
+- *Mind map*: topics linked visually.
+- Tips: date every entry, use abbreviations, highlight sparingly, and review within 24 hours.
+
+ 2. Payload
+
+Networking
+- A packet = **header + payload + trailer**.
+- Header: source and destination addresses, protocol, sequence number.
+- Trailer: error-checking data (e.g. CRC).
+- Payload size is limited by the **MTU** (Ethernet is typically 1500 bytes).
+- Header data is **overhead**: the smaller the payload relative to the header, the lower the efficiency.
+- Encryption protocols such as IPsec/TLS can encrypt the payload so intermediaries cannot read it.
+
+Web and APIs
+- The payload is the data sent in the body of an HTTP request or response, often **JSON** or XML (e.g. a login form sent via POST).
+
+Cybersecurity
+- Malware has two parts: the **delivery mechanism** (how it spreads) and the **payload** (what it does).
+- Payload effects include data theft, file encryption (ransomware), creating backdoors and deleting files.
+- Defences: antivirus, firewalls, patching, user awareness, and deep packet inspection.
+
+Aerospace and transport
+- Payload is the revenue-earning load, such as satellites, crew or cargo, excluding the vehicle's own weight and fuel.
+- Measured as **payload capacity** (e.g. a truck's maximum load in tonnes).
+
+ Extended Comparison
+
+| | Notebook | Payload |
+|---|---|---|
+| Nature | Device or interactive document | Data or cargo being carried |
+| Main use | Computing, coding, note-taking | Data transmission, malware action, cargo |
+| Key parts | Cells, kernel, screen, battery | Header/body/trailer (networking) |
+| Example | Jupyter `.ipynb` file | Body of an HTTP POST request |
+| Risk/limit | Out-of-order execution errors | MTU limit, malicious payloads |
+
+If you meant the Git Bash or CineBox project parts of your text, tell me and I'll add notes on those instead.
 
 
 
