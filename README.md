@@ -153,12 +153,12 @@ git push
 
  1. Notebook
 
-**Notebook computer**
+Notebook computer
 - Smaller and lighter than a full laptop; focuses on portability and battery life.
 - Usually has less processing power and storage than a desktop.
 - Components: display, keyboard, touchpad, battery, Wi-Fi/Bluetooth, USB ports.
 
-**Computational notebook (Jupyter, Google Colab)**
+Computational notebook (Jupyter, Google Colab)
 - File format: `.ipynb` (JSON-based).
 - Made of **cells**: *code cells* (run live) and *Markdown cells* (text, headings, formulas).
 - A **kernel** runs the code (e.g. Python, R).
@@ -212,6 +212,115 @@ If you meant the Git Bash or CineBox project parts of your text, tell me and I'l
 
 
 
+Here is more content, continuing from your notes.
 
+## 3. More on Notebook
+
+**Types of notebook computer**
+| Type | Features |
+|---|---|
+| Ultrabook | Very thin, light, long battery life, SSD storage |
+| Chromebook | Runs ChromeOS, mostly web apps, low cost |
+| 2-in-1 | Touchscreen that folds or detaches into a tablet |
+| Netbook (old) | Very small, low power, now largely replaced |
+
+Jupyter basics
+- Run a cell: `Shift + Enter`
+- Command mode: `Esc`. Edit mode: `Enter`
+- Insert cell above/below:`A` / `B`
+- Delete cell: `D D`
+- Switch to Markdown/Code:`M` / `Y`
+
+```python
+# Example code cell
+import pandas as pd
+df = pd.read_csv("students.csv")
+df.head()
+```
+```markdown
+# Example Markdown cell
+## Analysis of student results
+```
+
+Jupyter vs Google Colab
+| | Jupyter | Google Colab |
+|---|---|---|
+| Runs on | Your computer or a server | Google's cloud |
+| Setup | Install required | None, just a browser |
+| Free GPU | No | Yes (limited) |
+| Sharing | Share the file | Share a link, like Google Docs |
+
+4. More on Payload
+
+Packet structure (example sizes)
+- Ethernet MTU: 1500 bytes
+- IPv4 header: at least 20 bytes
+- TCP header: at least 20 bytes
+- Maximum TCP payload per packet is about 1460 bytes (1500 − 20 − 20)
+- A UDP header is only 8 bytes, so UDP has less overhead.
+
+```
+| Header | Payload (data) | Trailer |
+```
+
+**HTTP payload example (JSON)**
+```json
+POST /login
+{ "username": "elijah", "password": "********" }
+```
+The JSON in the body is the payload.
+
+**Types of malware payload**
+| Payload type | Action |
+|---|---|
+| Ransomware | Encrypts files and demands payment |
+| Spyware | Secretly collects data |
+| Backdoor | Opens hidden remote access |
+| Wiper | Deletes or corrupts data |
+| Botnet agent | Turns the device into a remote-controlled "zombie" |
+
+Payload vs related terms
+- Payload: what the malware does.
+- Exploit how it gets in, by using a weakness.
+- Vector: the route it travels, such as email or USB.
+
+ 5. Git Bash notes (from your text)
+
+| Command | Purpose |
+|---|---|
+| `pwd` | Show current folder |
+| `ls` | List files |
+| `cd folder` | Change folder |
+| `git init` | Start a repository |
+| `git clone URL` | Copy a repository |
+| `git status` | Show changes |
+| `git add .` | Stage all changes |
+| `git commit -m "message"` | Save a snapshot |
+| `git push` | Upload to GitHub |
+| `git pull` | Download latest changes |
+
+**Typical workflow:** edit files → `git add .` → `git commit -m "Updated website"` → `git push`
+
+ 6. Likely exam questions
+1. What is a computational notebook? An interactive document combining live code, output, charts and text.
+2. What is a kernel? The engine that runs the code in a notebook.
+3. Why can notebooks cause hidden errors? Cells can be run out of order.
+4. What is a payload in networking?  The actual data in a packet, excluding header and trailer.
+5. What does the header contain? Source and destination addresses, protocol and sequence number.
+6. What is a malware payload? The part that carries out the harmful action.
+7. Why does a small payload reduce efficiency? The header overhead stays the same, so more of the packet is overhead.
+8. What does `git push` do? Uploads local commits to the remote repository.
+
+7. More key terms
+- Cell: a block of code or text in a notebook.
+- Kernel:the program that executes notebook code.
+- .ipynb`: the Jupyter notebook file format.
+- MTU: the maximum packet size a network can carry.
+- Overhead: extra data (headers) needed to deliver the payload.
+- Encapsulation:  wrapping data with headers as it moves down network layers.
+- Repository: a project folder tracked by Git.
+- Commit:  a saved snapshot of changes.
+
+I can merge sections 1 to 7 into one Word document, kept concise. Shall I do that?
 
 
