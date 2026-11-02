@@ -324,3 +324,199 @@ Payload vs related terms
 I can merge sections 1 to 7 into one Word document, kept concise. Shall I do that?
 
 
+Here is more material, continuing from section 7 in the same structure.
+
+## 8. Notebook computers in more depth
+
+| Component | Role |
+|---|---|
+| CPU | Processes instructions; mobile versions save power |
+| RAM | Temporary memory for running programs |
+| SSD / HDD | Permanent storage (SSD is faster and more durable) |
+| Battery | Lithium-ion; typically lasts several hours |
+| Display | LCD or LED screen; sizes usually 11 to 17 inches |
+| Ports | USB, HDMI, audio jack, charging port |
+
+**Advantages:** portable, built-in battery, takes less desk space.
+**Disadvantages:** harder to upgrade, more costly than a desktop of equal power, can overheat, easier to lose or steal.
+
+**Care tips**
+- Do not block the air vents.
+- Use a protective bag.
+- Avoid draining the battery to 0% often.
+- Keep the system and antivirus updated.
+
+## 9. Notebook vs Laptop vs Desktop
+
+| Feature | Notebook | Laptop | Desktop |
+|---|---|---|---|
+| Size | Smallest, thin | Medium to large | Fixed, large |
+| Portability | Very high | High | None |
+| Performance | Moderate | Good | Highest |
+| Upgrade options | Limited | Some | Many |
+| Power source | Battery and charger | Battery and charger | Mains only |
+
+In everyday use, "notebook" and "laptop" are often treated as the same thing.
+
+## 10. Working with data in a Jupyter notebook
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("students.csv")
+
+print(df.shape)              # rows and columns
+print(df.describe())         # summary statistics
+print(df["mark"].mean())     # average mark
+
+df["mark"].hist()
+plt.title("Distribution of Marks")
+plt.show()
+```
+
+| Library | Purpose |
+|---|---|
+| `pandas` | Tables and data analysis |
+| `numpy` | Numerical calculations |
+| `matplotlib` | Charts and graphs |
+| `scikit-learn` | Machine learning |
+
+**Good notebook practice**
+- Run cells from top to bottom.
+- Use **Kernel → Restart & Run All** before sharing, to confirm it works.
+- Put a Markdown heading before each section.
+- Keep imports in the first cell.
+
+## 11. OSI and TCP/IP layers (where the payload travels)
+
+| OSI layer | Data unit | Example |
+|---|---|---|
+| 7 Application | Data | HTTP, FTP, DNS |
+| 6 Presentation | Data | Encryption, formats |
+| 5 Session | Data | Session control |
+| 4 Transport | Segment | TCP, UDP |
+| 3 Network | Packet | IP |
+| 2 Data Link | Frame | Ethernet, MAC |
+| 1 Physical | Bits | Cables, Wi-Fi |
+
+**Encapsulation:** as data moves down the layers, each layer adds its own header. The data from the layer above becomes the payload of the layer below. At the receiver, headers are removed in reverse (**decapsulation**).
+
+## 12. HTTP request and response payloads
+
+```
+POST /api/students HTTP/1.1
+Host: example.com
+Content-Type: application/json
+
+{ "name": "Mary", "mark": 85 }
+```
+- The first lines are **headers**.
+- The JSON after the blank line is the **payload (body)**.
+
+| Method | Has payload? | Use |
+|---|---|---|
+| GET | Usually no | Fetch data |
+| POST | Yes | Send new data |
+| PUT | Yes | Replace data |
+| PATCH | Yes | Update part of the data |
+| DELETE | Usually no | Remove data |
+
+Common status codes: `200` OK, `201` Created, `400` Bad request, `401` Unauthorized, `404` Not found, `500` Server error.
+
+## 13. Cybersecurity: protecting against malicious payloads
+
+| Defence | How it helps |
+|---|---|
+| Antivirus / anti-malware | Detects and removes known malicious code |
+| Firewall | Filters traffic by rules |
+| Patching and updates | Closes weaknesses that exploits rely on |
+| Email filtering | Blocks phishing attachments and links |
+| Least privilege | Limits what malware can do if it runs |
+| Backups | Allows recovery after ransomware or a wiper |
+| User awareness | Avoid unknown links, attachments and USB drives |
+
+**Stages of an attack (simplified):** delivery → exploitation → installation → payload execution → impact.
+
+## 14. Payload in other contexts
+- **Rocket/aircraft:** satellites, crew, cargo. Measured as payload capacity.
+- **Drone:** camera, sensors or packages carried.
+- **Truck:** goods carried, excluding the truck's own weight.
+- **Payload in code (JSON Web Tokens):** the middle part of a JWT holds the claims, such as user ID and expiry.
+
+## 15. Git and GitHub: more notes
+
+| Command | Purpose |
+|---|---|
+| `git config --global user.name "Name"` | Sets your name for commits |
+| `git config --global user.email "mail"` | Sets your email for commits |
+| `git remote add origin URL` | Links local repo to GitHub |
+| `git branch -M main` | Renames the branch to `main` |
+| `git push -u origin main` | First push, sets upstream |
+| `git diff` | Shows unstaged changes |
+| `git log --oneline` | Short commit history |
+
+**First-time upload of a project**
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/username/repo.git
+git push -u origin main
+```
+
+**`.gitignore` example**
+```
+node_modules/
+.env
+dist/
+```
+Keep API keys in `.env` and never upload them to GitHub.
+
+## 16. Git Bash vs Command Prompt vs PowerShell
+
+| Feature | Git Bash | Command Prompt | PowerShell |
+|---|---|---|---|
+| Shell type | Bash (Unix style) | Windows console | Windows scripting shell |
+| List files | `ls` | `dir` | `ls` or `dir` |
+| Current folder | `pwd` | `cd` | `pwd` |
+| Git commands | Included | Needs Git installed | Needs Git installed |
+| Best for | Git and Unix-style commands | Basic Windows tasks | Windows automation |
+
+## 17. More exam questions
+
+**Short answer**
+1. **What is a notebook computer?** A lightweight portable computer with a built-in screen, keyboard, touchpad and battery.
+2. **Name two advantages of a Jupyter notebook.** Step-by-step execution and inline charts.
+3. **What is encapsulation?** Wrapping data with headers as it moves down the network layers.
+4. **What is the difference between an exploit and a payload?** The exploit gets the malware in through a weakness; the payload is the harmful action it then performs.
+5. **Which HTTP method normally carries a payload?** POST.
+6. **Why should `.env` be in `.gitignore`?** It holds secret keys that must not be made public.
+7. **What does Bash stand for?** Bourne Again Shell.
+
+**Long answer**
+1. Explain the structure of a network packet and why header overhead matters. *(Header, payload, trailer, MTU, efficiency.)*
+2. Describe the types of malware payload and the defences against them. *(Ransomware, spyware, backdoor, wiper, botnet; antivirus, firewall, patching, backups.)*
+3. Compare a Jupyter notebook with a normal script. *(Interactive, cells, inline output, out-of-order risk, version control.)*
+
+## 18. More key terms
+- **Decapsulation:** removing headers as data moves up the layers at the receiver.
+- **Segment / Frame:** data units at the Transport and Data Link layers.
+- **Latency:** the delay before data arrives.
+- **Bandwidth:** the amount of data a connection can carry per second.
+- **JSON:** a text format for structured data, written as key-value pairs.
+- **API:** a set of rules that lets programs exchange data.
+- **Vector:** the route malware uses to reach a device.
+- **Ransomware:** malware that encrypts files and demands payment.
+- **Upstream:** the remote branch a local branch tracks.
+
+## 19. Quick revision summary
+- **Notebook:** portable computer, Jupyter/Colab document, or study book
+- **Jupyter:** cells and kernel, run top to bottom, restart and run all before sharing
+- **Payload:** the useful data in a packet, request or malware, excluding headers
+- **Network:** encapsulation adds headers, MTU limits size, header is overhead
+- **Security:** exploit gets in, vector carries it, payload does the damage
+- **Git:** add → commit → push, keep secrets in `.env` and `.gitignore`
+
+Would you like sections 1 to 19 combined into one concise Word document?
